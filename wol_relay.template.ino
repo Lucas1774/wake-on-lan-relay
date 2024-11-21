@@ -20,6 +20,7 @@ void setup() {
     delay(500);
   }
   server.begin();
+  WiFi.setSleep(WIFI_PS_MAX_MODEM);
   WOL.setRepeat(3, 100);
 }
 
@@ -44,5 +45,5 @@ void loop() {
     }
     client.stop();
   }
-  delay(500);
+  delay(100);
 }

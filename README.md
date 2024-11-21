@@ -21,5 +21,3 @@ I installed this software on an ESP32 chip, powered by the same PSU that powers 
 I'm encrypting the server endpoint as a very basic but effective security measure.  
 I port-forwarded the web server through my router settings, and created a DHCP lease so it keeps its local IP address consistent.  
 If your ISP gives you a dynamic IP address, you can use a DDNS to keep the URL of your device consistent.  
-
-To minimize interference and power consumption, it is possible to call `WiFi.setSleep(WIFI_PS_MAX_MODEM)` on setup, but it might be necessary to reset to `false` before sending Magic Packets. Directly powering the ESP32 from my PC’s motherboard caused boot problems with this configuration, likely due to shared power, but using a different power source should avoid this.  
