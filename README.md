@@ -21,3 +21,11 @@ I installed this software on an ESP32 chip, powered by the same PSU that powers 
 I'm encrypting the server endpoint as a very basic but effective security measure.  
 I port-forwarded the web server through my router settings, and created a DHCP lease so it keeps its local IP address consistent.  
 If your ISP gives you a dynamic IP address, you can use a DDNS to keep the URL of your device consistent.  
+
+### Wake on WAN after power cut
+
+A power cut can interfere with this setup in two different ways:
+- When power comes back, your ISP will most likely assign your router a new public IP address. There are a couple of options to have this not matter:
+  - Make sure you can access the network interface of a device in the LAN, for example, with a VPN in an always-on device, to retrieve the new IP.
+  - Use a DDNS with a script to keep the domain name link updated, even if the device that runs the script (on boot, for example, when the power comes back) turns itself off after the fact.
+- In the specific case that your always-on-device is plugged into a PC motherboard, it is likely that it won't be powered up until the PC is turned on at least once. Some BIOS allow to automatically turn the device on after a power shortage. It is possible to combine this with a script or setting to shut down after.  
